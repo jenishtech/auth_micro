@@ -49,7 +49,7 @@ static async login(req, res) {
       email: user.email,
     };
 
-    const token = jwt.sign(payload, process.env.JWT_SECRET || "fallback-secret", {
+    const token = jwt.sign(payload, "secret", {
       expiresIn: "365d",
     });
 
